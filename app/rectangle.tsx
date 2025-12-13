@@ -1,17 +1,17 @@
 import { View, Text, Button, StyleSheet, TextInput } from "react-native";
 import { useState } from "react";
-
+import { useRouter } from "expo-router";
 
 export default function Rectangle() {
 
-
+    const router = useRouter()
 
 
     const [area, setArea] = useState(0)
     const [width, setWidth] = useState(0)
     const [length, setLength] = useState(0)
 
-    function rectangleCal (){
+    function rectangleCal() {
         var result = width * length
         setArea(result)
     }
@@ -28,20 +28,25 @@ export default function Rectangle() {
             <Text>ความยาว คือ {length} ซม.</Text>
             <Text>พื้นที่สี่เหลี่ยมคือ คือ {area} ตร.ซม.</Text>
 
-            <TextInput style={styles.textInput} 
-            placeholder="ความกว้าง" 
-            value={width.toString()} 
-            onChangeText={(w) => setWidth(Number(w))} />
+            <TextInput style={styles.textInput}
+                placeholder="ความกว้าง"
+                value={width.toString()}
+                onChangeText={(w) => setWidth(Number(w))} />
 
 
-            <TextInput style={styles.textInput} 
-            placeholder="ความยาว"
-            value={length.toString()} 
-            onChangeText={(l) => setLength(Number(l))} />
+            <TextInput style={styles.textInput}
+                placeholder="ความยาว"
+                value={length.toString()}
+                onChangeText={(l) => setLength(Number(l))} />
 
 
-            <Button title="คำนวน" onPress={() => rectangleCal()}/>
-
+            <Button title="คำนวน" onPress={() => rectangleCal()} />
+            <View style={{ flexDirection: "row" }}>
+                <View style={{ marginRight: 5 }}>
+                    <Button title="Home" onPress={() => router.navigate('/')} />
+                </View>
+                <Button title="คำนวนเส้นรอบวงกลม" onPress={() => router.navigate('/circumference')} />
+            </View>
         </View>
     )
 

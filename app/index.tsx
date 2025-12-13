@@ -1,28 +1,36 @@
 
 import { useRouter } from "expo-router";
-import { View , Text , Button , StyleSheet } from "react-native";
+import { View, Text, Button, StyleSheet } from "react-native";
 
-export default function App(){
+export default function App() {
     const router = useRouter()
-    return(
+    return (
         <View style={styles.box}>
             <Text style={styles.textTitle}>Home</Text>
-            <Button title="next page" onPress={() => router.navigate('/rectangle') } />
+            <View style={{ flexDirection: "row" }}>
+                <View style={{ marginRight: 5 }}>
+                    <Button title="คำนวนพื้นที่สี่เหลี่ยม" onPress={() => router.navigate('/rectangle')} />
+                </View>
+                <Button title="คำนวนเส้นรอบวงกลม" onPress={() => router.navigate('/circumference')} />
+            </View>
+
+
         </View>
     )
 
 }
 
 const styles = StyleSheet.create({
-    box:{
-        flex:1,
-        backgroundColor:"pink",
-        justifyContent:"center",
-        alignItems:"center"
+    box: {
+        flex: 1,
+        backgroundColor: "pink",
+        justifyContent: "center",
+        alignItems: "center"
+
     },
-    textTitle:{
-        fontSize:22,
-        fontWeight:"700"
+    textTitle: {
+        fontSize: 22,
+        fontWeight: "700"
     }
-}) 
+})
 
