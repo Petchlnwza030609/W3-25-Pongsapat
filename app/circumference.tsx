@@ -23,9 +23,9 @@ const [circumference, setCircumference] = useState(0)
 
             <Text style={styles.textTitle} >คำนวนเส้นรอบวงกลม</Text>
             {/* <Button title="next page"></Button> */}
-            <Text>รัศมี คือ 2 </Text>
-            <Text>ค่าพาย คือ 3.14 </Text>
-            <Text>เส้นรอบวงกลม คือ {circumference}</Text>
+            <Text>รัศมี คือ 2 เซนติเมตร</Text>
+            <Text>ค่าพาย คือ 3.14 เซนติเมตร</Text>
+            <Text>เส้นรอบวงกลม คือ {circumference} เซนติเมตร</Text>
             
 
             <TextInput style={styles.textInput} 
